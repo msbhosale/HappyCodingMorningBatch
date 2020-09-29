@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+	<bean id="address" class="in.happycoding.bean.Address" >
+		<constructor-arg name="city" value="Rukadi" />
+		<constructor-arg name="pin" value="123321"/>
+	</bean>
+	
+	<bean id="employee" class="in.happycoding.bean.Employee" >
+	
+		<property name="id" value="123"/>
+		<property name="name" value="Kalpna"/>
+		<property name="address" ref="address" />
+	
+	</bean>
+	
+</beans>
