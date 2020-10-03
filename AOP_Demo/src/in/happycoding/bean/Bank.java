@@ -2,13 +2,11 @@ package in.happycoding.bean;
 
 public class Bank {
 
-	public void deposite() {
+	public boolean createAccount() {
 		
-		System.out.println("Deposite Logic");
+		System.out.println("Creating Account In HDFC");
+		
+		return true;
 	}
 	
-	public void login() {
-		
-		System.out.println("Login Logic");
-	}
 }

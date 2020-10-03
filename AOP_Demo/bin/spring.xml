@@ -10,11 +10,11 @@
 	<aop:aspectj-autoproxy />
 
 
-	<bean id="school" class="in.happycoding.bean.School">
+	<bean id="bank" class="in.happycoding.bean.Bank">
 	
 	</bean>
 
-	<bean id="display" class="in.happycoding.aspect.Display">
+	<bean id="message" class="in.happycoding.aspect.Message">
 	
 	</bean>
 

@@ -3,8 +3,7 @@ package in.happycoding.test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import in.happycoding.bean.Bank;
-import in.happycoding.bean.School;
+import in.happycoding.dao.StudentDAO;
 
 public class TestApp {
 
@@ -12,11 +11,13 @@ public class TestApp {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		
-		Bank theBank = (Bank) context.getBean("bank");
+		StudentDAO sd = (StudentDAO) context.getBean("studentDAO");
 		
-		boolean status = theBank.createAccount();
+//		String name = sd.getNameById(101);
+//		
+//		System.out.println(name);
+		int rollNumber = sd.getRollNumber("MS");
 		
-		System.out.println("Account created successfully");
-		
+		System.out.println(rollNumber);
 	}
 }
