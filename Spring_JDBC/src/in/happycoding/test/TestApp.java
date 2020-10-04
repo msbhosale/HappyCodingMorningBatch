@@ -3,6 +3,7 @@ package in.happycoding.test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import in.happycoding.bean.Student;
 import in.happycoding.dao.StudentDAO;
 
 public class TestApp {
@@ -13,11 +14,25 @@ public class TestApp {
 		
 		StudentDAO sd = (StudentDAO) context.getBean("studentDAO");
 		
-//		String name = sd.getNameById(101);
-//		
-//		System.out.println(name);
-		int rollNumber = sd.getRollNumber("MS");
+		sd.deleteById(101);
 		
-		System.out.println(rollNumber);
+		System.out.println("Done");
+		
 	}
 }
+
+
+
+
+
+
+//String name = sd.getNameById(101);
+//
+//System.out.println(name);
+//int rollNumber = sd.getRollNumber("MS");
+//
+//System.out.println(rollNumber);
+
+//Student student = new Student(105, "Ameer", "Khan");
+
+//sd.update(student);
