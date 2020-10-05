@@ -1,5 +1,7 @@
 package in.happycoding.test;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,9 +16,12 @@ public class TestApp {
 		
 		StudentDAO sd = (StudentDAO) context.getBean("studentDAO");
 		
-		sd.deleteById(101);
+		List<Student> studentList = sd.getAll();
 		
-		System.out.println("Done");
+		for(Student theStudent : studentList) {
+			
+			System.out.println(theStudent);
+		}
 		
 	}
 }
@@ -36,3 +41,12 @@ public class TestApp {
 //Student student = new Student(105, "Ameer", "Khan");
 
 //sd.update(student);
+
+
+//sd.deleteById(101);
+
+//Student theStudent = sd.getById(103);
+
+//System.out.println(theStudent);
+
+//System.out.println("Done");
