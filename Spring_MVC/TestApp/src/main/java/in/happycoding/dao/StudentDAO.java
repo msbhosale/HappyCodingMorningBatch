@@ -26,6 +26,13 @@ public class StudentDAO {
 		return student;
 	}
 	
+	public void deleteById(int rollNumber) {
+		
+		String query = "DELETE FROM student WHERE roll_number = "+rollNumber;
+		
+		jdbcTemplate.update(query);
+	}
+	
 	public List<Student> getAll(){
 		
 		String query = "SELECT * FROM student";
@@ -33,7 +40,24 @@ public class StudentDAO {
 		return jdbcTemplate.query(query, new StudentMapper());
 	}
 	
+	public void save(Student s) {
+		
+		String query = "INSERT INTO student VALUES (?,?,?)";
+		
+		Object[] params = {s.getRollNumber(),s.getFirstName(),s.getLastName()};
+		
+		jdbcTemplate.update(query,params);
+ 	}
 
+	public void update(Student s) {
+		
+		String query = "UPDATE student SET first_name = ?,last_name = ? WHERE roll_number = ?";
+		
+		Object[] params = {s.getFirstName(),s.getLastName(),s.getRollNumber()};
+		
+		jdbcTemplate.update(query,params);
+	}
+	
 	public class StudentMapper implements RowMapper<Student> {
 
 		@Override
